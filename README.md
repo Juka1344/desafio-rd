@@ -83,8 +83,14 @@ Para completar este teste, você deve concentrar-se principalmente em três arqu
 
 ### Executando os testes:
 
+## Caso não estejan usando o container docker
+
 - Entre no diretório frontend (cd frontend/).
 - Execute no seu terminal o seguinte comando: `npm test -- --watchAll=false`.
+
+## caso esteja usando o container docker
+
+- `docker compose exec frontend npm test` .
 
 ### Executando com Docker (Recomendado)
 
