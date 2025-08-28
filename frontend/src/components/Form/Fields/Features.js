@@ -15,7 +15,7 @@ function Features({ features, selectedFeatures = [], onFeatureChange }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">
+      <h2 className="text-lg font-semibold text-black mb-4">
         Funcionalidades Desejadas
       </h2>
       <div className="space-y-2">

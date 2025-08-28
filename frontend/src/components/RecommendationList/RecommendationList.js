@@ -4,31 +4,31 @@ function RecommendationList({ recommendations }) {
   const getCategoryStyle = (category) => {
     const styles = {
       Vendas: {
-        bg: 'bg-blue-50',
-        border: 'border-blue-200',
-        text: 'text-blue-700',
+        bg: 'bg-white',
+        border: 'border-[#003D5C]',
+        text: 'text-black',
       },
       Marketing: {
-        bg: 'bg-green-50',
-        border: 'border-green-200',
-        text: 'text-green-700',
+        bg: 'bg-white',
+        border: 'border-[#003D5C]',
+        text: 'text-black',
       },
       Omnichannel: {
-        bg: 'bg-purple-50',
-        border: 'border-purple-200',
-        text: 'text-purple-700',
+        bg: 'bg-white',
+        border: 'border-[#003D5C]',
+        text: 'text-black',
       },
       'Uso de Inteligência Artificial': {
-        bg: 'bg-orange-50',
-        border: 'border-orange-200',
-        text: 'text-orange-700',
+        bg: 'bg-white',
+        border: 'border-[#003D5C]',
+        text: 'text-black',
       },
     };
     return (
       styles[category] || {
-        bg: 'bg-gray-50',
+        bg: 'bg-white',
         border: 'border-gray-200',
-        text: 'text-gray-700',
+        text: 'text-black',
       }
     );
   };
@@ -36,10 +36,10 @@ function RecommendationList({ recommendations }) {
   if (recommendations.length === 0) {
     return (
       <div className="text-center py-12">
-        <div className="bg-gray-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+        <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
           <span className="text-3xl">?</span>
         </div>
-        <h3 className="text-lg font-medium text-gray-600 mb-2">
+        <h3 className="text-lg font-medium text-black mb-2">
           Nenhuma recomendação ainda
         </h3>
         <p className="text-gray-500">
@@ -70,7 +70,7 @@ function RecommendationList({ recommendations }) {
               className={`rounded-xl border-2 ${categoryStyle.border} ${categoryStyle.bg} p-6 hover:shadow-md transition-all duration-200 transform hover:-translate-y-1`}
             >
               <div className="mb-4">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">
+                <h3 className="font-bold text-lg text-black mb-2">
                   {recommendation.name}
                 </h3>
                 <span
