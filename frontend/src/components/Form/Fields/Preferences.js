@@ -8,7 +8,8 @@ function Preferences({
   selectedPreferences = [],
   onPreferenceChange,
 }) {
-  const [currentPreferences, setCurrentPreferences] = useState(selectedPreferences)
+  const [currentPreferences, setCurrentPreferences] =
+    useState(selectedPreferences);
 
   const handlePreferenceChange = (preference) => {
     const updatedPreferences = currentPreferences.includes(preference)
@@ -20,22 +21,22 @@ function Preferences({
   };
 
   return (
-    <div className="mb-4">
-      <h2 className="text-lg font-bold mb-2">Preferências:</h2>
-      <ul>
+    <div>
+      <h2 className="text-lg font-semibold text-gray-800 mb-4">
+        Suas Preferências
+      </h2>
+      <div className="space-y-2">
         {preferences.map((preference, index) => (
-          <li key={index} className="mb-2">
-            <Checkbox
-              value={preference}
-              checked={currentPreferences.includes(preference)}
-              onChange={() => handlePreferenceChange(preference)}
-              className="text-blue-500"
-            >
-              {preference}
-            </Checkbox>
-          </li>
+          <Checkbox
+            key={index}
+            value={preference}
+            checked={currentPreferences.includes(preference)}
+            onChange={() => handlePreferenceChange(preference)}
+          >
+            {preference}
+          </Checkbox>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

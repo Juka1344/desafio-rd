@@ -28,28 +28,36 @@ function Form({ onRecommendationsUpdate }) {
   };
 
   return (
-    <form
-      className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
-      onSubmit={handleSubmit}
-    >
-      <Preferences
-        preferences={preferences}
-        onPreferenceChange={(selected) =>
-          handleChange('selectedPreferences', selected)
-        }
-      />
-      <Features
-        features={features}
-        onFeatureChange={(selected) =>
-          handleChange('selectedFeatures', selected)
-        }
-      />
-      <RecommendationType
-        onRecommendationTypeChange={(selected) =>
-          handleChange('selectedRecommendationType', selected)
-        }
-      />
-      <SubmitButton text="Obter recomendação" />
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Layout responsivo para preferências e features */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Preferences
+          preferences={preferences}
+          onPreferenceChange={(selected) =>
+            handleChange('selectedPreferences', selected)
+          }
+        />
+        <Features
+          features={features}
+          onFeatureChange={(selected) =>
+            handleChange('selectedFeatures', selected)
+          }
+        />
+      </div>
+
+      {/* Tipo de recomendação */}
+      <div>
+        <RecommendationType
+          onRecommendationTypeChange={(selected) =>
+            handleChange('selectedRecommendationType', selected)
+          }
+        />
+      </div>
+
+      {/* Botão como footer ocupando toda largura */}
+      <div className="pt-4 border-t border-gray-200">
+        <SubmitButton text="Obter recomendação" />
+      </div>
     </form>
   );
 }
