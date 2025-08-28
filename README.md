@@ -86,6 +86,42 @@ Para completar este teste, você deve concentrar-se principalmente em três arqu
 - Entre no diretório frontend (cd frontend/).
 - Execute no seu terminal o seguinte comando: `npm test -- --watchAll=false`.
 
+### Executando com Docker (Recomendado)
+
+## Pré-requisitos
+
+- Docker instalado no seu sistema
+- Docker Compose instalado
+- Script para instalar o docker presente na raíz do projeto `install-docker.sh`
+
+## Na raiz do projeto:
+
+# Construir e executar ambos os serviços
+
+docker compose up --build
+
+- Frontend estará disponível em: http://localhost:3000
+- Backend estará disponível em: http://localhost:3001
+
+## Acessando a Aplicação
+
+- **Frontend**: http://localhost:3000
+- **Backend**: http://localhost:3001 (API json-server)
+
+## Comandos Docker Úteis
+
+# Executar em background
+
+docker compose up -d
+
+# Parar aplicação
+
+docker compose down
+
+# Reconstruir após mudanças
+
+docker compose up --build
+
 ## Critérios de Aceite
 
 1. O serviço de recomendação de produtos deve ser capaz de receber as preferências e funcionalidades desejadas do usuário através de um formulário.
