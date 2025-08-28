@@ -3,12 +3,8 @@ import Form from './components/Form/Form';
 import RecommendationList from './components/RecommendationList/RecommendationList';
 
 function App() {
-  const [recommendations, setRecommendations] = useState([]);
+  const [recommendations = [], setRecommendations = []] = useState([]);
 
-  /**
-   * Atualiza as recomendações quando o formulário é submetido
-   * Usado useCallback porque queremos evitar re-renders desnecessários do Form
-   */
   const handleRecommendationsUpdate = useCallback((newRecommendations) => {
     setRecommendations(newRecommendations);
   }, []);
