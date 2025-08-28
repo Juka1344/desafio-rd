@@ -103,11 +103,6 @@ docker compose up --build
 - Frontend estará disponível em: http://localhost:3000
 - Backend estará disponível em: http://localhost:3001
 
-## Acessando a Aplicação
-
-- **Frontend**: http://localhost:3000
-- **Backend**: http://localhost:3001 (API json-server)
-
 ## Comandos Docker Úteis
 
 # Executar em background
