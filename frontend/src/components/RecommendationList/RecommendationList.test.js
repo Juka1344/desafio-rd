@@ -138,7 +138,6 @@ describe('RecommendationList Component', () => {
   test('aplica estilos de hover e transições', () => {
     render(<RecommendationList recommendations={[mockRecommendations[0]]} />);
 
-    // Procura pelo card do produto que contém as classes de hover
     const productCard = screen
       .getByText('RD Station CRM')
       .closest('div[class*="hover:shadow-md"]');
@@ -154,19 +153,15 @@ describe('RecommendationList Component', () => {
   test('testa todas as categorias de produtos', () => {
     render(<RecommendationList recommendations={mockRecommendations} />);
 
-    // Vendas - azul
     const vendasBadge = screen.getByText('Vendas');
     expect(vendasBadge).toHaveClass('text-blue-700');
 
-    // Marketing - verde
     const marketingBadge = screen.getByText('Marketing');
     expect(marketingBadge).toHaveClass('text-green-700');
 
-    // Omnichannel - roxo
     const omnichannelBadge = screen.getByText('Omnichannel');
     expect(omnichannelBadge).toHaveClass('text-purple-700');
 
-    // IA - laranja
     const iaBadge = screen.getByText('Uso de Inteligência Artificial');
     expect(iaBadge).toHaveClass('text-orange-700');
   });

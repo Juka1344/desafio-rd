@@ -269,7 +269,7 @@ describe('recommendationService', () => {
       );
 
       expect(recommendations).toHaveLength(1);
-      expect(recommendations[0].name).toBe('Produto B'); // Último na ordem original
+      expect(recommendations[0].name).toBe('Produto B');
     });
   });
 

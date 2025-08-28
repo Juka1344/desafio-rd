@@ -32,7 +32,7 @@ describe('useForm Hook', () => {
       'pref1',
       'pref2',
     ]);
-    expect(result.current.formData.selectedFeatures).toEqual(['feature1']); // não alterado
+    expect(result.current.formData.selectedFeatures).toEqual(['feature1']);
     expect(result.current.formData.selectedRecommendationType).toBe(
       'SingleProduct'
     );
