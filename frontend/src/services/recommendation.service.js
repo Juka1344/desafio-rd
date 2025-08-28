@@ -1,5 +1,3 @@
-// recommendation.service.js
-
 const calculateCompatibilityScore = (selectedItems, productItems) => {
   if (!selectedItems.length) return 0;
 
@@ -25,7 +23,7 @@ const sortProductsByScore = (products, scores) => {
       if (a.score !== b.score) {
         return b.score - a.score;
       }
-      return a.originalIndex - b.originalIndex;
+      return b.originalIndex - a.originalIndex;
     });
 };
 
