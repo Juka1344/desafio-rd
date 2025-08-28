@@ -10,15 +10,15 @@ function RecommendationType({ onRecommendationTypeChange }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">
+      <h2 className="text-lg font-semibold text-black mb-4">
         Tipo de Recomendação
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <label
           className={`flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
             selectedType === 'SingleProduct'
-              ? 'border-blue-500 bg-blue-50'
-              : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
+              ? 'border-[#00D4FF] bg-white'
+              : 'border-gray-300 hover:border[#00F2C9] hover:bg-white'
           }`}
         >
           <input
@@ -27,11 +27,11 @@ function RecommendationType({ onRecommendationTypeChange }) {
             value="SingleProduct"
             checked={selectedType === 'SingleProduct'}
             onChange={() => handleTypeChange('SingleProduct')}
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+            className="w-4 h-4 text-[#003D5C] bg-gray-100 border-gray-300"
           />
           <div className="ml-3">
-            <div className="font-medium text-gray-800">Produto Único</div>
-            <div className="text-sm text-gray-600">
+            <div className="font-medium text-black">Produto Único</div>
+            <div className="text-sm text-black">
               Receba apenas a melhor recomendação
             </div>
           </div>
@@ -40,8 +40,8 @@ function RecommendationType({ onRecommendationTypeChange }) {
         <label
           className={`flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
             selectedType === 'MultipleProducts'
-              ? 'border-blue-500 bg-blue-50'
-              : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
+              ? 'border-[#00D4FF] bg-white'
+              : 'border-gray-300 hover:border[#00F2C9] hover:bg-white'
           }`}
         >
           <input
@@ -50,11 +50,11 @@ function RecommendationType({ onRecommendationTypeChange }) {
             value="MultipleProducts"
             checked={selectedType === 'MultipleProducts'}
             onChange={() => handleTypeChange('MultipleProducts')}
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+            className="w-4 h-4 text-[#003D5C] bg-gray-100 border-gray-300"
           />
           <div className="ml-3">
-            <div className="font-medium text-gray-800">Múltiplos Produtos</div>
-            <div className="text-sm text-gray-600">
+            <div className="font-medium text-black">Múltiplos Produtos</div>
+            <div className="text-sm text-black">
               Veja todas as opções compatíveis
             </div>
           </div>
