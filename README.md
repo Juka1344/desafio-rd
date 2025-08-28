@@ -71,7 +71,7 @@ Para completar este teste, você deve concentrar-se principalmente em três arqu
 
 1. Clone o repositório: `git clone <URL_DO_REPOSITORIO>`
 2. Instale as dependências: `yarn install`
-3. Para instalar o projeto, execute o script `./install.sh` 
+3. Para instalar o projeto, execute o script `./install.sh`
 4. Inicie a aplicação: `yarn start`
 
 ### Scripts Disponíveis
@@ -80,6 +80,11 @@ Para completar este teste, você deve concentrar-se principalmente em três arqu
 - `start:frontend`: Inicia apenas a parte frontend da aplicação em modo de desenvolvimento.
 - `start:backend`: Inicia apenas a parte backend da aplicação em modo de desenvolvimento.
 - `dev`: Inicia simultaneamente a parte frontend e backend da aplicação em modo de desenvolvimento.
+
+### Executando os testes:
+
+- Entre no diretório frontend (cd frontend/).
+- Execute no seu terminal o seguinte comando: `npm test -- --watchAll=false`.
 
 ## Critérios de Aceite
 
@@ -95,7 +100,7 @@ Certifique-se de que todos os critérios de aceite são atendidos durante o dese
 
 ## Autor
 
-Desenvolvido por [Seu Nome]
+Desenvolvido por [João Victor Nunes Rosa]
 
 ## Licença
 
