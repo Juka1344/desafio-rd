@@ -22,6 +22,11 @@ function Form({ onRecommendationsUpdate }) {
 
     if (onRecommendationsUpdate) {
       onRecommendationsUpdate(newRecommendations);
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     }
   };
 
