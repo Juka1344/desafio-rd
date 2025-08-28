@@ -36,7 +36,7 @@ function RecommendationList({ recommendations }) {
   if (recommendations.length === 0) {
     return (
       <div className="text-center py-12">
-        <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+        <div className="bg-gray-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
           <span className="text-3xl">?</span>
         </div>
         <h3 className="text-lg font-medium text-black mb-2">
