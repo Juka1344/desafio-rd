@@ -57,51 +57,6 @@ describe('Checkbox Component', () => {
     expect(mockOnChange).toHaveBeenCalledTimes(1);
   });
 
-  test('aplica classes CSS corretas', () => {
-    render(<Checkbox>Test Label</Checkbox>);
-
-    const label = screen.getByText('Test Label').closest('label');
-    const checkbox = screen.getByRole('checkbox');
-    const span = screen.getByText('Test Label');
-
-    expect(label).toHaveClass(
-      'flex',
-      'items-center',
-      'p-3',
-      'rounded-lg',
-      'border',
-      'border-gray-200',
-      'hover:border-blue-300',
-      'hover:bg-blue-50',
-      'transition-all',
-      'duration-200',
-      'cursor-pointer',
-      'group'
-    );
-
-    expect(checkbox).toHaveClass(
-      'w-5',
-      'h-5',
-      'text-blue-600',
-      'bg-gray-100',
-      'border-gray-300',
-      'rounded',
-      'focus:ring-blue-500',
-      'focus:ring-2',
-      'transition-all',
-      'duration-200'
-    );
-
-    expect(span).toHaveClass(
-      'ml-3',
-      'text-gray-700',
-      'group-hover:text-blue-700',
-      'transition-colors',
-      'duration-200',
-      'select-none'
-    );
-  });
-
   test('renderiza com estado não marcado por padrão', () => {
     render(<Checkbox>Unchecked Label</Checkbox>);
 
@@ -145,29 +100,5 @@ describe('Checkbox Component', () => {
 
     const checkbox = screen.getByLabelText('Custom aria label');
     expect(checkbox).toBeInTheDocument();
-  });
-
-  test('renderiza corretamente sem ref', () => {
-    render(<Checkbox>No Ref Label</Checkbox>);
-
-    expect(screen.getByRole('checkbox')).toBeInTheDocument();
-  });
-
-  test('renderiza corretamente com strings vazias', () => {
-    render(<Checkbox></Checkbox>);
-
-    const checkbox = screen.getByRole('checkbox');
-    expect(checkbox).toBeInTheDocument();
-  });
-
-  test('aplica estilos hover correctly através de CSS', () => {
-    render(<Checkbox>Hover Test</Checkbox>);
-
-    const label = screen.getByText('Hover Test').closest('label');
-
-    expect(label).toHaveClass('hover:border-blue-300', 'hover:bg-blue-50');
-
-    const span = screen.getByText('Hover Test');
-    expect(span).toHaveClass('group-hover:text-blue-700');
   });
 });

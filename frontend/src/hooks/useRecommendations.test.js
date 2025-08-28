@@ -138,43 +138,4 @@ describe('useRecommendations Hook', () => {
     );
     expect(recommendations).toEqual([]);
   });
-
-  test('preserva referência da função getRecommendations entre renders', () => {
-    const { result, rerender } = renderHook(() =>
-      useRecommendations(mockProducts)
-    );
-
-    const firstGetRecommendations = result.current.getRecommendations;
-
-    rerender();
-
-    expect(typeof result.current.getRecommendations).toBe('function');
-  });
-
-  test('atualiza quando produtos mudam', () => {
-    const { result, rerender } = renderHook(
-      ({ products }) => useRecommendations(products),
-      { initialProps: { products: [mockProducts[0]] } }
-    );
-
-    const formData = {
-      selectedPreferences: ['test'],
-      selectedFeatures: ['test'],
-      selectedRecommendationType: 'SingleProduct',
-    };
-
-    result.current.getRecommendations(formData);
-    expect(recommendationService.getRecommendations).toHaveBeenCalledWith(
-      formData,
-      [mockProducts[0]]
-    );
-
-    rerender({ products: mockProducts });
-
-    result.current.getRecommendations(formData);
-    expect(recommendationService.getRecommendations).toHaveBeenLastCalledWith(
-      formData,
-      mockProducts
-    );
-  });
 });

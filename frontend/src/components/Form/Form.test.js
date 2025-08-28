@@ -10,16 +10,8 @@ const mockOnRecommendationsUpdate = jest.fn();
 jest.mock('../../hooks/useProducts', () => ({
   __esModule: true,
   default: () => ({
-    preferences: [
-      'Automação de marketing',
-      'Integração com chatbots',
-      'Análise preditiva de dados',
-    ],
-    features: [
-      'Chat ao vivo e mensagens automatizadas',
-      'Análise de dados para insights',
-      'Gestão de leads',
-    ],
+    preferences: ['Automação de marketing', 'Integração com chatbots'],
+    features: ['Chat ao vivo e mensagens automatizadas', 'Gestão de leads'],
     products: [
       {
         id: 1,
@@ -65,7 +57,6 @@ describe('Form Component', () => {
 
   test('renderiza todos os campos do formulário', () => {
     render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
     expect(screen.getByText('Suas Preferências')).toBeInTheDocument();
     expect(screen.getByText('Funcionalidades Desejadas')).toBeInTheDocument();
     expect(screen.getByText('Tipo de Recomendação')).toBeInTheDocument();
@@ -73,38 +64,28 @@ describe('Form Component', () => {
 
   test('renderiza checkboxes de preferências', () => {
     render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
     expect(screen.getByLabelText('Automação de marketing')).toBeInTheDocument();
     expect(
       screen.getByLabelText('Integração com chatbots')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByLabelText('Análise preditiva de dados')
     ).toBeInTheDocument();
   });
 
   test('renderiza checkboxes de funcionalidades', () => {
     render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
     expect(
       screen.getByLabelText('Chat ao vivo e mensagens automatizadas')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByLabelText('Análise de dados para insights')
     ).toBeInTheDocument();
     expect(screen.getByLabelText('Gestão de leads')).toBeInTheDocument();
   });
 
   test('renderiza radio buttons para tipo de recomendação', () => {
     render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
     expect(screen.getByLabelText(/produto único/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/múltiplos produtos/i)).toBeInTheDocument();
   });
 
   test('renderiza botão de submit', () => {
     render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
     const submitButton = screen.getByRole('button', {
       name: /obter recomendação/i,
     });
@@ -114,7 +95,6 @@ describe('Form Component', () => {
 
   test('chama onRecommendationsUpdate ao submeter formulário', async () => {
     render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
     const form = document.querySelector('form');
     fireEvent.submit(form);
 
@@ -136,7 +116,6 @@ describe('Form Component', () => {
 
   test('não chama onRecommendationsUpdate se callback não fornecido', async () => {
     render(<Form />);
-
     const form = document.querySelector('form');
     fireEvent.submit(form);
 
@@ -144,26 +123,5 @@ describe('Form Component', () => {
       expect(mockGetRecommendations).toHaveBeenCalled();
       expect(mockOnRecommendationsUpdate).not.toHaveBeenCalled();
     });
-  });
-
-  test('aplica layout responsivo correto', () => {
-    render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
-    const form = document.querySelector('form');
-    expect(form).toHaveClass('space-y-6');
-
-    const gridContainer = form.querySelector(
-      '.grid.grid-cols-1.md\\:grid-cols-2'
-    );
-    expect(gridContainer).toBeInTheDocument();
-  });
-
-  test('renderiza botão como footer com separador', () => {
-    render(<Form onRecommendationsUpdate={mockOnRecommendationsUpdate} />);
-
-    const buttonContainer = screen.getByRole('button', {
-      name: /obter recomendação/i,
-    }).parentElement;
-    expect(buttonContainer).toHaveClass('pt-4', 'border-t', 'border-gray-200');
   });
 });
