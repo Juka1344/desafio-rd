@@ -24,7 +24,7 @@ function Form({ onRecommendationsUpdate }) {
       onRecommendationsUpdate(newRecommendations);
 
       window.scrollTo({
-        top: 0,
+        top: 180,
         behavior: 'smooth',
       });
     }
